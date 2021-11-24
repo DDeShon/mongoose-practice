@@ -7,10 +7,21 @@ mongoose.connect("mongodb://localhost/testdb", () => {
   (e) => console.error(e);
 
 async function run() {
-  const user = await User.create({ name: "Zachary", age: 17 });
-  //   const user = new User({ name: "Damon", age: 41 });
-  //   await user.save();
-  console.log(user);
+  try {
+    const user = await User.create({
+      name: "Zachary",
+      age: 17,
+      hobbies: ["Battlefield", "CoD", "Fortnight"],
+      address: {
+        street: "Main Street",
+        city: "Main City",
+        state: "Main State",
+      },
+    });
+    console.log(user);
+  } catch (e) {
+    console.log(e.message);
+  }
 }
 
 run();
