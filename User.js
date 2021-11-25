@@ -14,8 +14,14 @@ const userSchema = new mongoose.Schema({
     required: true,
     lowercase: true,
   },
-  createdAt: Date,
-  updatedAt: Date,
+  createdAt: {
+    type: Date,
+    default: () => Date.now(),
+  },
+  updatedAt: {
+    type: Date,
+    default: () => Date.now(),
+  },
   bestFriend: mongoose.SchemaTypes.ObjectId,
   hobbies: [String],
   address: addressSchema,
