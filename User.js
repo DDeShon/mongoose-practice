@@ -41,6 +41,10 @@ userSchema.methods.sayHi = function () {
 };
 
 userSchema.statics.findByName = function (name) {
+  return this.find({ name: new RegExp(name, "i") });
+};
+
+userSchema.query.byName = function (name) {
   return this.where({ name: new RegExp(name, "i") });
 };
 

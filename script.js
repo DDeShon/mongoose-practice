@@ -11,7 +11,7 @@ async function run() {
     const user = await User.findByName("Zachary");
 
     console.log(user);
-    user.sayHi();
+    // user.sayHi();
   } catch (e) {
     console.log(e.message);
   }
