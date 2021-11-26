@@ -8,18 +8,10 @@ mongoose.connect("mongodb://localhost/testdb", () => {
 
 async function run() {
   try {
-    const user = await User.create({
-      name: "Zachary",
-      age: 31,
-      email: "email@email.com",
-      hobbies: ["Battlefield", "CoD", "Fortnight"],
-      address: {
-        street: "Main Street",
-        city: "Main City",
-        state: "Main State",
-      },
-    });
+    const user = await User.findByName("Zachary");
+
     console.log(user);
+    user.sayHi();
   } catch (e) {
     console.log(e.message);
   }
