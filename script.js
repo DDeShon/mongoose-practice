@@ -8,10 +8,15 @@ mongoose.connect("mongodb://localhost/testdb", () => {
 
 async function run() {
   try {
-    const user = await User.findByName("Zachary");
+    const user = await User.findOne({
+      name: "Zachary",
+      email: "email@email.com",
+    });
 
     console.log(user);
-    // user.sayHi();
+    await user.save();
+    console.log(user);
+    console.log(user.namedEmail);
   } catch (e) {
     console.log(e.message);
   }
