@@ -6,6 +6,7 @@ const addressSchema = new mongoose.Schema({
   state: String,
   zip: {
     type: Number,
+    min: 5,
     max: 5,
   },
 });
