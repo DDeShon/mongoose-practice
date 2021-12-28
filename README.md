@@ -1,3 +1,3 @@
 ﻿# mongoose-practice
 
-This project is being created as practice with mongoose and mongodb.
+This project was created as practice with mongoose and mongodb.
